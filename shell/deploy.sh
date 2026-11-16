@@ -3,8 +3,8 @@
 #####################################################
 # CHARGEMENT DES FICHIERS                           #
 #####################################################
-source ./config/settings.env
-source ./shell/functions.sh
+source ./config/settings.env;
+source ./shell/functions.sh;
 
 #####################################################
 # LANCEMENT DU MENU                                 #
