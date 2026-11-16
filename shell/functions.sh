@@ -122,7 +122,8 @@ MENU_CHOIX() {
 #                                 DEMONSTRATION                                                            #
 ############################################################################################################
 FUNC_DEMONSTRATATION(){
-  echo "$LLAMA_GITHUB";
+  echo "Appel de la fonction FUNC_DEMONSTRATATION;
+  echo "La machine dispose de $CPUS core.";
 }
 ############################################################################################################
 #                                 TOUT CE QUI CONCERNE L'APPLICATION LLAMA.CPP                             #
