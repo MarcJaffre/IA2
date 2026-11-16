@@ -12,9 +12,18 @@ MENU_SELECTION() {
  echo "================================================="
  echo "          MENU PRINCIPAL                         "
  echo "================================================="
- echo "";
+ echo "0) Installer les dépendances";
  echo "";
  echo "================================================="
+ echo "1) Télécharger le dépôt LLAMA";
+ echo "2) Construire LLAMA";
+ echo "3) Télécharger les modèles";
+ echo "4) Lancer le serveur";
+ echo "5) Installer le service";
+ echo "6) Désinstaller le service";
+ echo "=================================================";
+ echo "Q) Quitter le Menu";
+ echo "";
  read -p "Sélectionner votre choix ? " REPONSE
  echo "";
 }
