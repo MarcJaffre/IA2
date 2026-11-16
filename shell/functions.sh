@@ -15,7 +15,7 @@ source ./config/settings.env
 MENU_SELECTION() {
  clear
  echo "=================================================";
- echo "#             === MENU PRINCIPAL ===             ";
+ echo "#             === MENU PRINCIPAL ===            #";
  echo "=================================================";
  echo "0) Installer les dépendances systèmes";
  echo "";
