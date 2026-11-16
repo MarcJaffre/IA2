@@ -44,6 +44,13 @@ MENU_CHOIX() {
 
     # ===================================================================
     # 
+    x|X)
+     echo "$CPUS";
+     echo "$WORKDIR";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
     0)
      read -p "Appuyez sur Entrée pour continuer...";
      ;;
