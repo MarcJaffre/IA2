@@ -46,79 +46,8 @@ BASE_CHOIX() {
         case "$REPONSE" in
             # ========================================================================================================
             0)
-               echo "Dossier de travail: $WORKDIR | $WORKDIR_FINAL";
-               echo "GIT LLAMA : $GITHUB_LLAMA";
-               echo "";
                read -p "Appuyez sur Entrée pour continuer..."
                ;;
-            # ========================================================================================================
-            # Installation Dependances
-            1)
-               bash ${WORKDIR}/workspaces/base/install_packages.sh 1>/dev/null;
-               echo "";
-               echo "---------------------------------------------------------------------------";
-               read -p "Appuyez sur Entrée pour continuer..."
-               ;;
-            # ========================================================================================================
-            # Construction de LLAMA"
-            2)
-               bash ${WORKDIR}/workspaces/llama/build.sh;
-               read -p "Appuyez sur Entrée pour continuer..."
-               ;;
-            # ========================================================================================================
-            # Construction de OpenWebui
-            3)
-               echo "-> Vous avez choisi le Menu 3."
-               read -p "Appuyez sur Entrée pour continuer..."
-               ;;
-            # ========================================================================================================
-            # Installation du service Llama
-            a|A)
-               bash ${WORKDIR}/workspaces/llama/service_install.sh;
-               read -p "Appuyez sur Entrée pour continuer..."
-               ;;
-            # ========================================================================================================
-            # Installation du service OpenWebui
-            b|B)
-               bash ${WORKDIR}/workspaces/openwebui/service_uninstall.sh;
-               read -p "Appuyez sur Entrée pour continuer..."
-               ;;
-            # ========================================================================================================
-            # Désinstallation du service Llama
-            c|C)
-               bash ${WORKDIR}/workspaces/llama/service_uninstall.sh;
-               read -p "Appuyez sur Entrée pour continuer..."
-               ;;
-            # ========================================================================================================
-            # Désinstallation du service OpenWebui
-            d|D)
-               bash ${WORKDIR}/workspaces/openwebui/service_uninstall.sh;
-               read -p "Appuyez sur Entrée pour continuer..."
-               ;;
-            # ========================================================================================================
-            # Lancer le téléchargement des modèles
-            m|M)
-               bash ${WORKDIR}/workspaces/llama/start.sh;
-               read -p "Appuyez sur Entrée pour continuer..."
-               ;;
-
-            # ========================================================================================================
-            # Nvidia - GPU Unlock
-            x|X)
-               bash ${WORKDIR}/workspaces/base/Nvidia_gpu_unlock.sh;
-               read -p "Appuyez sur Entrée pour continuer..."
-               ;;
-            # ========================================================================================================
-            # Redémarrer la machine
-            r|R)
-                reboot;
-                ;;
-            # ========================================================================================================
-            # Quitter le menu
-            q|Q)
-                echo "Fermeture du menu. Au revoir !"
-                break
-                ;;
             # ========================================================================================================
             # Choix incorrect
             *)
