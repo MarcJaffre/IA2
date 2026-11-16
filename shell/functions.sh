@@ -7,6 +7,7 @@ set -e
 #                                 CHARGEMENT DU FICHIER DE CONFIGURATION                                   #
 ############################################################################################################
 source ./config/settings.env
+source ./shell/functions.sh
 
 ############################################################################################################
 #                                 TOUT CE QUI CONCERNE LE MENU UTILISATEUR                                 #
