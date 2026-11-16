@@ -21,7 +21,9 @@ MENU_SELECTION() {
  echo "4) Lancer le serveur";
  echo "5) Installer le service";
  echo "6) Désinstaller le service";
+ echo "";
  echo "=================================================";
+ echo "";
  echo "Q) Quitter le Menu";
  echo "";
  read -p "Sélectionner votre choix ? " REPONSE
