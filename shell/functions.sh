@@ -9,10 +9,10 @@ set -e
 # Fonction d'affichage et de saisie
 MENU_SELECTION() {
  clear
- echo "================================================="
- echo "          MENU PRINCIPAL                         "
- echo "================================================="
- echo "0) Installer les dépendances";
+ echo "=================================================";
+ echo "#             === MENU PRINCIPAL ===             ";
+ echo "=================================================";
+ echo "0) Installer les dépendances systèmes";
  echo "";
  echo "================================================="
  echo "1) Télécharger le dépôt LLAMA";
@@ -34,6 +34,72 @@ MENU_CHOIX() {
   MENU_SELECTION
    case "$REPONSE" in
 
+    # ===================================================================
+    # 
+    0)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    1)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    2)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    3)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    4)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    5)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    6)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    7)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    8)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    9)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
+    # ===================================================================
+    # 
+    A|a)
+     echo "";
+     read -p "Appuyez sur Entrée pour continuer...";
+     ;;
     # ===================================================================
     # Choix incorrect
     q)
