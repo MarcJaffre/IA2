@@ -7,7 +7,7 @@ set -e
 #                                 CHARGEMENT DU FICHIER DE CONFIGURATION                                   #
 ############################################################################################################
 source ./config/settings.env
-source ./shell/functions.sh
+source ./shell/functions.sh;
 
 ############################################################################################################
 #                                 TOUT CE QUI CONCERNE LE MENU UTILISATEUR                                 #
@@ -18,16 +18,18 @@ MENU_SELECTION() {
  echo "=================================================";
  echo "#             === MENU PRINCIPAL ===            #";
  echo "=================================================";
- echo "0) Installer les dépendances systèmes";
+ echo "X) Test des variables"; 
  echo "";
- echo "================================================="
- echo "1) Télécharger le dépôt LLAMA";
- echo "2) Construire LLAMA";
- echo "3) Télécharger les modèles";
- echo "4) Lancer le serveur";
- echo "5) Installer le service";
- echo "6) Désinstaller le service";
- echo "";
+ #echo "================================================="
+ #echo "0) Installer les dépendances systèmes";
+ #echo "================================================="
+ #echo "1) Télécharger le dépôt LLAMA";
+ #echo "2) Construire LLAMA";
+ #echo "3) Télécharger les modèles";
+ #echo "4) Lancer le serveur";
+ #echo "5) Installer le service";
+ #echo "6) Désinstaller le service";
+ #echo "";
  echo "=================================================";
  echo "";
  echo "Q) Quitter le Menu";
