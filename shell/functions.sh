@@ -22,6 +22,12 @@ MENU_CHOIX() {
  while true; do
   MENU_SELECTION
    case "$REPONSE" in
+
+    # ===================================================================
+    # Choix incorrect
+    q)
+     break;
+     ;;
     # ===================================================================
     # Choix incorrect
     *)
