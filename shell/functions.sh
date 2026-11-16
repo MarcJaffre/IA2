@@ -7,34 +7,30 @@ set -e
 #                                 TOUT CE QUI CONCERNE LE MENU UTILISATEUR                                 #
 ############################################################################################################
 # Fonction d'affichage et de saisie
-
-BASE_MENU_SELECTION() {
-    clear
-    echo "================================================="
-    echo "          MENU PRINCIPAL                         "
-    echo "================================================="
-    echo "";
-    echo "";
-    echo "================================================="
-    read -p "Sélectionner votre choix ? " REPONSE
-    echo "";
+MENU_SELECTION() {
+ clear
+ echo "================================================="
+ echo "          MENU PRINCIPAL                         "
+ echo "================================================="
+ echo "";
+ echo "";
+ echo "================================================="
+ read -p "Sélectionner votre choix ? " REPONSE
+ echo "";
 }
-
-# ====================================================================================================================================================================
-# Fonction gérant la boucle et le traitement du choix
-BASE_CHOIX() {
-    while true; do
-        BASE_MENU_SELECTION
-        case "$REPONSE" in
-            # ========================================================================================================
-            # Choix incorrect
-            *)
-                echo "Erreur : Choix invalide ($REPONSE). Veuillez réessayer."
-                sleep 2
-                ;;
-            # ========================================================================================================
-        esac
-    done
+MENU_CHOIX() {
+ while true; do
+  MENU_SELECTION
+   case "$REPONSE" in
+    # ===================================================================
+    # Choix incorrect
+    *)
+     echo "Erreur : Choix invalide ($REPONSE). Veuillez réessayer."
+     sleep 2
+     ;;
+    # ===================================================================
+    esac
+  done
 }
 
 ############################################################################################################
