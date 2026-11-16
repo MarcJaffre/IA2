@@ -40,6 +40,7 @@ MENU_CHOIX() {
     # 
     x|X)
      FUNC_DEMONSTRATATION;
+     echo "";
      read -p "Appuyez sur Entrée pour continuer...";
      ;;
     # ===================================================================
