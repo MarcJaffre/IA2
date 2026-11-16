@@ -9,4 +9,4 @@ source ./shell/functions.sh
 #####################################################
 # LANCEMENT DU MENU                                 #
 #####################################################
-MENU_SELECTION;
+BASE_CHOIX;
