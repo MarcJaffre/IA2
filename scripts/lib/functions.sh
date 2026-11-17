@@ -179,6 +179,9 @@ if [ ! -d /usr/share/doc/dosfstools          ]; then apt install -y dosfstools  
 echo "Installation de GNUPG2";
 if [ ! -d /usr/share/doc/gnupg2              ]; then apt install -y gnupg2                        1>/dev/null; fi
 
+echo "Installation de GIT";
+if [ ! -d /var/lib/git                       ]; then apt install -y git                           1>/dev/null; fi
+
 echo "Installation de PCIUTILS";
 if [ ! -d /usr/share/doc/pciutils            ]; then apt install -y pciutils                      1>/dev/null; fi
 
@@ -204,9 +207,18 @@ if [ ! -d /usr/share/doc/openssl             ]; then apt install -y openssl     
 # ==============================================================================================================================
 echo "Installation de BUILD-ESSENTIAL";
 if [ ! -d /usr/share/build-essential         ]; then apt install -y build-essential              1>/dev/null; fi
-# --------
-echo "Installation de LINUX-HEADERS";
-if [ ! -d /usr/src/linux-headers-$(uname -r) ]; then apt install -y linux-headers-$(uname -r)    1>/dev/null; fi
+
+
+
+# -------- GITHUB WORKFLOW
+if [ ! -d  /usr/share/doc/pkg-config         ]; then apt install -y pkg-config                   1>/dev/null; fi
+# -------- GITHUB WORKFLOW
+
+
+
+#echo "Installation de LINUX-HEADERS";
+#if [ ! -d /usr/src/linux-headers-$(uname -r) ]; then apt install -y linux-headers-$(uname -r)    1>/dev/null; fi
+
 echo "Installation de PYTHON3-FULL";
 if [ ! -d /usr/share/doc/python3-full        ]; then apt install -y python3-full                 1>/dev/null; fi
 echo "Installation de PYTHON3-PIP";
