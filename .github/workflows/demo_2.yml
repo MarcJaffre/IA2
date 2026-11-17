@@ -20,6 +20,6 @@ jobs:
   container:
    image: debian:bookworm-slim
   # ------------------------------------------------------------------
-  steps:
-    - name: Mise à jour du système
-    - run: apt update;
+  steps: |
+   name: Mise à jour du système
+   run: apt update;
