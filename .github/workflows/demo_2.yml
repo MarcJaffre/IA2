@@ -28,12 +28,12 @@ jobs:
   # ====================================================================
   steps:
    # ===================================================================
-   - name: Récupérer le code du dépôt
-     uses: actions/checkout@v4
+   - name:  "Récupérer le code du dépôt"
+     uses:  "actions/checkout@v4"
    # ===================================================================
-   - name: Lister le contenu
-     run:  find ./scripts
+   - name:  "Lister le contenu"
+     run:   "find ./scripts"
    # ===================================================================
-   #- name: Charger les fichiers 
-   # shell: bash
-   #   run: source ./scripts/lib/functions.sh
+   - name:  "Charger les fichiers"
+     shell: "bash"
+     run:   "source ./scripts/lib/functions.sh"
