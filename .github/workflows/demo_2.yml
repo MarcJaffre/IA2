@@ -22,8 +22,8 @@ jobs:
  #######################################################################
  Etape_1:
   # ====================================================================
-  runs-on: ubuntu-22.04
-  container: debian:bookworm
+  runs-on: "ubuntu-22.04"
+  container: "debian:bookworm"
   name:  "Étape 1 : Préparation de l'environnement Debian"
   # ====================================================================
   steps:
