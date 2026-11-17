@@ -22,7 +22,9 @@ PARM_07='-DLLAMA_BUILD_TESTS=OFF'
 PARM_08='-DBUILD_SHARED_LIBS=OFF'
 PARM_09='-DGGML_CCACHE=OFF'
 CMAKE_ARGS="$PARM_02 $PARM_03 $PARM_04 $PARM_05 $PARM_06 $PARM_07 $PARM_08 $PARM_09"
-cmake -B build $CMAKE_ARGS --log-level=ERROR > /dev/null;
+cmake -B build $CMAKE_ARGS
+
+#--log-level=ERROR > /dev/null;
 }
 
 
