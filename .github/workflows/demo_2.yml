@@ -22,3 +22,7 @@ jobs:
   steps:
    - name: Mise à jour du système
      run: apt update
+     
+   - name: Mise à niveau du système
+     run: apt upgrade
+  
