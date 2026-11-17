@@ -42,17 +42,18 @@ jobs:
      shell: "bash"
      run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
    # ===================================================================
-   #- name:  "Installation des paquets de construction"
-   #  shell: "bash"
-   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
+   - name:  "Installation des paquets de construction"
+     shell: "bash"
+     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
    # ===================================================================
    - name:  "Clonage du Dépôt LLAMA.CPP"
      shell: "bash"
      run:   "source ./scripts/lib/functions.sh && LLAMA_GIT"
    # ===================================================================
-   - name:  "Information"
-     run:   find .
+   - name:  "Configuration de la Build LLAMA.CPP"
+     run:   "source ./scripts/lib/functions.sh && LLAMA_BUILD_CONFIG"
    # ===================================================================
+   
    # ===================================================================
    # ===================================================================
    # ===================================================================   
