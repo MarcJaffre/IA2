@@ -9,10 +9,11 @@
 ################################################################################################################################################
 LLAMA_GIT(){
  git clone --quiet "https://github.com/ggerganov/llama.cpp.git" "llama.cpp";
+ cd "./llama.cpp/src"
+ ls
 }
 
 LLAMA_BUILD_CONFIG(){
-cd "./llama.cpp/src"
 PARM_02='-DCMAKE_BUILD_TYPE=Release'
 PARM_03='-DGGML_CUDA=ON'
 PARM_04='-DCMAKE_CUDA_ARCHITECTURES=86'
