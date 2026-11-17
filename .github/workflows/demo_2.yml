@@ -28,3 +28,6 @@ jobs:
    - name: Mise à niveau du système
      run: apt upgrade
    # ===================================================================
+   - name: Installation de paquet
+     run : |
+      aapt install -y build-essential
