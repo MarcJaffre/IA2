@@ -28,10 +28,6 @@ jobs:
   steps:
   # =============================================================================
    # ============================================================================
-   # Récupérer le code du dépôt
-   - name:  "Récupérer le code"
-     uses:  "actions/checkout@v4"  
-   # ============================================================================
    # Compilation automatique de llama.cpp pour Debian Bookworm.
    #- name:  "Build Release"
    #  uses:  "softprops/action-gh-release@v2"
@@ -41,19 +37,23 @@ jobs:
    #    body: "Generation d'une build de developpement, ne pas utiliser !"
    #    generate_release_notes: true
    # ============================================================================
-   - name: 'Check OS'
-     run: "cat /etc/os-release"
+   - name:  "Check OS"
+     run:   "cat /etc/os-release"
+   # ============================================================================
+   # Récupérer le code du dépôt
+   - name:  "Récupérer le code"
+     uses:  "actions/checkout@v4"
    # ============================================================================
    #- name:  "Information"
    #  run:   find .
    # ============================================================================
-   #- name:  "Mise à jour"
-   #  shell: "bash"
-   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
+   - name:  "Mise à jour"
+     shell: "bash"
+     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
    # ============================================================================
-   #- name:  "Installation des paquets de base"
-   #  shell: "bash"
-   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
+   - name:  "Installation des paquets de base"
+     shell: "bash"
+     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
    # ============================================================================
    #- name:  "Installation des paquets de construction"
    #  shell: "bash"
