@@ -3,8 +3,6 @@
 ################################################################################################################################################
 # Le script lanceur charge tous les fichiers.
 
-
-
 ################################################################################################################################################
 #                                 TOUT CE QUI CONCERNE L'INSTALLATION DES DEPENDANCES                                                          #
 ################################################################################################################################################
@@ -91,16 +89,16 @@ if [ ! -d /usr/share/build-essential         ]; then apt install -y build-essent
 # ==============================================================================================================================
 
 # -------- GITHUB WORKFLOW
-#if [ ! -d  /usr/share/doc/pkg-config         ]; then apt install -y pkg-config                   1>/dev/null; fi
+if [ ! -d  /usr/share/doc/pkg-config         ]; then apt install -y pkg-config                   1>/dev/null; fi
 # -------- GITHUB WORKFLOW
 
 # ==============================================================================================================================
 #echo "Installation de LINUX-HEADERS";
 #if [ ! -d /usr/src/linux-headers-$(uname -r) ]; then apt install -y linux-headers-$(uname -r)    1>/dev/null; fi
-#echo "Installation de PYTHON3-FULL";
-#if [ ! -d /usr/share/doc/python3-full        ]; then apt install -y python3-full                 1>/dev/null; fi
-#echo "Installation de PYTHON3-PIP";
-#if [ ! -f /usr/bin/pip3                      ]; then apt install -y python3-pip                  1>/dev/null; fi
+echo "Installation de PYTHON3-FULL";
+if [ ! -d /usr/share/doc/python3-full        ]; then apt install -y python3-full                 1>/dev/null; fi
+echo "Installation de PYTHON3-PIP";
+if [ ! -f /usr/bin/pip3                      ]; then apt install -y python3-pip                  1>/dev/null; fi
 
 
 # ==============================================================================================================================
