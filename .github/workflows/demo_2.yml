@@ -38,6 +38,7 @@ jobs:
      shell: bash
      run: |
       source ./scripts/lib/functions.sh
-   #   DEBIAN_APT_BASE
+      DEBIAN_APT_BASE
+      DEBIAN_APT_TOOL
+      DEBIAN_APT_BUILDER
    # ===================================================================
- 
