@@ -24,7 +24,7 @@ jobs:
   # ====================================================================
   runs-on: "ubuntu-22.04"
   container: "debian:bookworm"
-  name:  "Étape 1 : GitHub"
+  name:  "Apprentissage d'un build"
   # ====================================================================
   steps:
    # ===================================================================
@@ -34,6 +34,8 @@ jobs:
    - name:  "Lister le contenu"
      run:   "find ./scripts"
    # ===================================================================
-   - name:  "Charger les fichiers"
+   - name:  "Mise à jour"
      shell: "bash"
-     run:   "source ./scripts/lib/functions.sh"
+     run: |
+      source ./scripts/lib/functions.sh 
+      DEBIAN_APT_BASE
