@@ -26,6 +26,7 @@ jobs:
      run: actions/checkout@v4
    # ===================================================================
    # source ./scripts/lib/functions.sh
-   
+   - name: Lister le contenu
+     run: ls .
    # ===================================================================
    
