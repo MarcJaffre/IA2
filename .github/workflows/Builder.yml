@@ -52,5 +52,5 @@ jobs:
      with:
        tag_name: "v${{ github.run_number }}"
        name: "Release v${{ github.run_number }}"
-       body: "Generation d'une build de developpement, ne pas utiliser !"
-       #generate_release_notes: true
+       #body: "Generation d'une build de developpement, ne pas utiliser !"
+       generate_release_notes: true
