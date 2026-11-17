@@ -31,26 +31,33 @@ jobs:
    - name:  "Récupérer le code du dépôt"
      uses:  "actions/checkout@v4"
    # ===================================================================
-   - name:  "Lister le contenu"
-     run:   "find ./scripts"
+   - name:  "Information"
+     run:   |
+     pwd
+     find .
    # ===================================================================
-   - name:  "Mise à jour"
-     shell: "bash"
-     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
+   #- name:  "Mise à jour"
+   #  shell: "bash"
+   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
    # ===================================================================
-   - name:  "Installation des paquets de base"
-     shell: "bash"
-     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
+   #- name:  "Installation des paquets de base"
+   #  shell: "bash"
+   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
    # ===================================================================
-   - name:  "Installation des paquets de construction"
-     shell: "bash"
-     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
+   #- name:  "Installation des paquets de construction"
+   #  shell: "bash"
+   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
+   # ===================================================================
+   # ===================================================================
+   # ===================================================================
+   # ===================================================================
+   # ===================================================================   
    # ===================================================================
    # Compilation automatique de llama.cpp pour Debian Bookworm.
-   - name:  "Build Release"
-     uses:  "softprops/action-gh-release@v2"
-     with:
-       tag_name: "v${{ github.run_number }}"
-       name: "Release Alpha v${{ github.run_number }}"
-       body: "Generation d'une build de developpement, ne pas utiliser !"
-       generate_release_notes: true
+   #- name:  "Build Release"
+   #  uses:  "softprops/action-gh-release@v2"
+   #  with:
+   #    tag_name: "v${{ github.run_number }}"
+   #    name: "Release Alpha v${{ github.run_number }}"
+   #    body: "Generation d'une build de developpement, ne pas utiliser !"
+   #    generate_release_notes: true
