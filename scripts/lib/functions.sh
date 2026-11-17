@@ -1,4 +1,9 @@
 ################################################################################################################################################
+#                                 Operating SYSTEM Nvidia/Ubuntu                                                                               #
+################################################################################################################################################
+
+
+################################################################################################################################################
 #                                 CHARGEMENT DES FICHIERS DE CONFIGURATION                                                                     #
 ################################################################################################################################################
 # Le script lanceur charge tous les fichiers.
@@ -7,38 +12,10 @@
 #                                 TOUT CE QUI CONCERNE L'INSTALLATION DES DEPENDANCES                                                          #
 ################################################################################################################################################
 DEBIAN_APT_BASE(){
-# ==============================================================================================================================
-if [[ $VERSION_CODENAME == "trixie" || $VERSION_CODENAME == "bookworm"  ]]; then
-cat > /etc/apt/sources.list << EOF
-# =======================================================================================================
-# https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backport                #
-# =======================================================================================================
-deb http://ftp.fr.debian.org/debian/            $VERSION_CODENAME          main non-free non-free-firmware contrib #
-# =======================================================================================================
-deb http://ftp.fr.debian.org/debian/            $VERSION_CODENAME-updates  main non-free non-free-firmware contrib #
-# =======================================================================================================
-deb http://security.debian.org/debian-security  $VERSION_CODENAME-security main non-free non-free-firmware contrib #
-# =======================================================================================================
-EOF
-fi
-# ==============================================================================================================================
-if [[ $VERSION_CODENAME == "bullseye" ]]; then
-cat > /etc/apt/sources.list << EOF
-# =======================================================================================================
-deb http://ftp.fr.debian.org/debian/            $VERSION_CODENAME          main non-free contrib                 #
-# =======================================================================================================
-deb http://ftp.fr.debian.org/debian/            $VERSION_CODENAME-updates  main non-free contrib                 #
-# =======================================================================================================
-deb http://security.debian.org/debian-security  $VERSION_CODENAME-security main non-free contrib                 #
-# =======================================================================================================
-# https://www.debian.org/doc/manuals/debian-reference/ch02.en.html#_updates_and_backport                #
-# =======================================================================================================
-EOF
-fi
 DEBIAN_FRONTEND=noninteractive /usr/bin/apt update     1>/dev/null;
 DEBIAN_FRONTEND=noninteractive /usr/bin/apt upgrade -y 1>/dev/null;
 }
-
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 DEBIAN_APT_TOOL(){
 # Tool
 # ==============================================================================================================================
@@ -69,7 +46,7 @@ if [ ! -d /usr/share/doc/tree                ]; then apt install -y tree        
 echo "Installation de WGET";
 if [ ! -d /usr/share/doc/wget                ]; then apt install -y wget                          1>/dev/null; fi
 }
-
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 DEBIAN_APT_BUILDER(){
 # ==============================================================================================================================
 # LLAMA
@@ -105,37 +82,8 @@ if [ ! -d /usr/share/doc/python3-full        ]; then apt install -y python3-full
 #fi
 # ==============================================================================================================================
 }
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-
-
-
-################################################################################################################################################
-#                                 TOUT CE QUI CONCERNE L'INSTALLATION DE NVIDIA                                                                #
-################################################################################################################################################
-NVIDIA_INSTALL(){
-# ==============================================================================================================================
-if [ ! -d /usr/share/bug/nvidia-detect           ]; then apt install -y nvidia-detect            1>/dev/null; fi
-if [ ! -d /usr/share/doc/nvidia-driver           ]; then apt install -y nvidia-driver            1>/dev/null; fi
-if [ ! -d /usr/share/doc/nvidia-settings         ]; then apt install -y nvidia-setting           1>/dev/null; fi
-# ==============================================================================================================================
-if [ ! -d /usr/share/doc/nvidia-settings         ]; then apt install -y nvidia-setting           1>/dev/null; fi
-if [ ! -d /usr/lib/nvidia-cuda-toolkit           ]; then apt install -y nvidia-cuda-toolkit;     1>/dev/null; fi
-if [ ! -d /usr/share/doc/nvidia-cuda-toolkit-gcc ]; then apt install -y nvidia-cuda-toolkit-gcc  1>/dev/null; fi
-# ==============================================================================================================================
-cat > /etc/modprobe.d/blacklist-nouveau.conf << EOF
-blacklist nouveau
-options nouveau modeset=0
-EOF
-/usr/sbin/update-initramfs -u 1>/dev/null;
-# ==============================================================================================================================
-git clone --quiet https://github.com/Zagitta/gpu-unlock /tmp/gpu-unlock;
-cd /tmp/gpu-unlock;
-make install;
-sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=\"gpu_unlock.targets=all quiet\"/' /etc/default/grub;
-grep GRUB_CMDLINE_LINUX_DEFAULT /etc/default/grub;
-/usr/sbin/update-grub;
-# ==============================================================================================================================
-}
 
 ################################################################################################################################################
 #                                 TOUT CE QUI CONCERNE L'APPLICATION LLAMA.CPP                                                                 #
@@ -165,6 +113,15 @@ cmake -B build $CMAKE_ARGS
 ################################################################################################################################################
 #                                 TOUT CE QUI CONCERNE L'APPLICATION OPENWEBUI                                                                 #
 ################################################################################################################################################
+
+
+
+
+
+
+
+
+
 
 
 ################################################################################################################################################
@@ -280,5 +237,34 @@ MENU_CHOIX() {
     # ===================================================================
     esac
   done
+# ==============================================================================================================================
+}
+
+
+################################################################################################################################################
+#                                 TOUT CE QUI CONCERNE L'INSTALLATION DE NVIDIA                                                                #
+################################################################################################################################################
+NVIDIA_INSTALL(){
+# ==============================================================================================================================
+if [ ! -d /usr/share/bug/nvidia-detect           ]; then apt install -y nvidia-detect            1>/dev/null; fi
+if [ ! -d /usr/share/doc/nvidia-driver           ]; then apt install -y nvidia-driver            1>/dev/null; fi
+if [ ! -d /usr/share/doc/nvidia-settings         ]; then apt install -y nvidia-setting           1>/dev/null; fi
+# ==============================================================================================================================
+if [ ! -d /usr/share/doc/nvidia-settings         ]; then apt install -y nvidia-setting           1>/dev/null; fi
+if [ ! -d /usr/lib/nvidia-cuda-toolkit           ]; then apt install -y nvidia-cuda-toolkit;     1>/dev/null; fi
+if [ ! -d /usr/share/doc/nvidia-cuda-toolkit-gcc ]; then apt install -y nvidia-cuda-toolkit-gcc  1>/dev/null; fi
+# ==============================================================================================================================
+cat > /etc/modprobe.d/blacklist-nouveau.conf << EOF
+blacklist nouveau
+options nouveau modeset=0
+EOF
+/usr/sbin/update-initramfs -u 1>/dev/null;
+# ==============================================================================================================================
+git clone --quiet https://github.com/Zagitta/gpu-unlock /tmp/gpu-unlock;
+cd /tmp/gpu-unlock;
+make install;
+sed -i 's/GRUB_CMDLINE_LINUX_DEFAULT=.*/GRUB_CMDLINE_LINUX_DEFAULT=\"gpu_unlock.targets=all quiet\"/' /etc/default/grub;
+grep GRUB_CMDLINE_LINUX_DEFAULT /etc/default/grub;
+/usr/sbin/update-grub;
 # ==============================================================================================================================
 }
