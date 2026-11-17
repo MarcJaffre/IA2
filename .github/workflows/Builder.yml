@@ -33,7 +33,7 @@ jobs:
    #  uses:  "softprops/action-gh-release@v2"
    #  with:
    #    tag_name: "v${{ github.run_number }}"
-   #    name: "Release Alpha v${{ github.run_number }}"
+   #    name: "Release Alphea v${{ github.run_number }}"
    #    body: "Generation d'une build de developpement, ne pas utiliser !"
    #    generate_release_notes: true
    # ============================================================================
@@ -55,9 +55,9 @@ jobs:
      shell: "bash"
      run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
    # ============================================================================
-   #- name:  "Installation des paquets de construction"
-   #  shell: "bash"
-   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
+   - name:  "Installation des paquets de construction"
+     shell: "bash"
+     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
    # ============================================================================
    #- name:  "Clonage du Dépôt LLAMA.CPP"
    #  shell: "bash"
