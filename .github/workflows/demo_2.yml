@@ -8,10 +8,9 @@ name: Demo_2
 ##############
 on:
  workflow_dispatch:
-
 ########################################################################
-# Tâche de travaille #
-######################
+# Tâche de travail #
+####################
 jobs:
  Etape_1:
   # ------------------------------------------------------------------
@@ -20,6 +19,6 @@ jobs:
   container:
    image: debian:bookworm-slim
   # ------------------------------------------------------------------
-  steps: |
+  steps:
    - name: Mise à jour du système
      run: apt update
