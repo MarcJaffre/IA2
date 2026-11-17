@@ -36,16 +36,19 @@ jobs:
    # ===================================================================
    - name:  "Mise à jour"
      shell: "bash"
-     run: "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
+     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
    # ===================================================================
    - name:  "Installation des paquets de base"
      shell: "bash"
-     run: "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
+     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
    # ===================================================================
    - name:  "Installation des paquets de construction"
      shell: "bash"
-     run: "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
+     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
    # ===================================================================
-   - name:  "Installation des paquets de Nvidia"
-     shell: "bash"
-     run: "source ./scripts/lib/functions.sh && NVIDIA_INSTALL"
+   - name:  "Build Release"
+     uses:  "softprops/action-gh-release@v2
+     with:
+      tag_name: v${{ github.run_number }}
+      name: Release v${{ github.run_number }}
+      generate_release_notes: true
