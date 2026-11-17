@@ -25,8 +25,11 @@ jobs:
    - name: Récupérer le code du dépôt
      uses: actions/checkout@v4
    # ===================================================================
-   # source ./scripts/lib/functions.sh
    - name: Lister le contenu
      run: ls .
    # ===================================================================
+   - name: Charger les fichiers 
+     run: |
+     source ./scripts/lib/functions.sh
+     
    
