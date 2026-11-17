@@ -28,7 +28,10 @@ jobs:
    - name: Lister le contenu
      run: ls .
    # ===================================================================
-   - name: Charger les fichiers 
-     run: source ./scripts/lib/functions.sh
+   - name: Vérifier binaire
+     run: whereis source
+   # ===================================================================
+   #- name: Charger les fichiers 
+   #  run: source ./scripts/lib/functions.sh
      
    
