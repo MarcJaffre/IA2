@@ -29,7 +29,6 @@ jobs:
      run: ls .
    # ===================================================================
    - name: Charger les fichiers 
-     run: |
-     source ./scripts/lib/functions.sh
+     run: source ./scripts/lib/functions.sh
      
    
