@@ -38,14 +38,14 @@ jobs:
      shell: "bash"
      run: "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
    # ===================================================================
-   - name:  "Installation des paquets de base"
-     shell: "bash"
-     run: "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
+   #- name:  "Installation des paquets de base"
+   #  shell: "bash"
+   #  run: "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
    # ===================================================================
-   - name:  "Installation des paquets de construction"
-     shell: "bash"
-     run: "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
+   #- name:  "Installation des paquets de construction"
+   #  shell: "bash"
+   #  run: "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
    # ===================================================================
-   - name:  "Installation des paquets de Nvidia"
-     shell: "bash"
-     run: "source ./scripts/lib/functions.sh && NVIDIA_INSTALL"
+   #- name:  "Installation des paquets de Nvidia"
+   #  shell: "bash"
+   #  run: "source ./scripts/lib/functions.sh && NVIDIA_INSTALL"
