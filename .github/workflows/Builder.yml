@@ -41,31 +41,34 @@ jobs:
    #    body: "Generation d'une build de developpement, ne pas utiliser !"
    #    generate_release_notes: true
    # ============================================================================
-   - name:  "Information"
-     run:   find .
+   - name: 'Check OS'
+     run: "cat /etc/os-release"
    # ============================================================================
-   - name:  "Mise à jour"
-     shell: "bash"
-     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
+   #- name:  "Information"
+   #  run:   find .
    # ============================================================================
-   - name:  "Installation des paquets de base"
-     shell: "bash"
-     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
+   #- name:  "Mise à jour"
+   #  shell: "bash"
+   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
    # ============================================================================
-   - name:  "Installation des paquets de construction"
-     shell: "bash"
-     run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
+   #- name:  "Installation des paquets de base"
+   #  shell: "bash"
+   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
    # ============================================================================
-   - name:  "Clonage du Dépôt LLAMA.CPP"
-     shell: "bash"
-     run:   "source ./scripts/lib/functions.sh && LLAMA_GIT"
+   #- name:  "Installation des paquets de construction"
+   #  shell: "bash"
+   #  run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
    # ============================================================================
-   - name:  "Configuration de la build"
-     shell: "bash"
-     run:   |
-      source ./scripts/lib/functions.sh
-      cd "./llama.cpp"
-      LLAMA_BUILD_CONFIG
+   #- name:  "Clonage du Dépôt LLAMA.CPP"
+   #  shell: "bash"
+   #  run:   "source ./scripts/lib/functions.sh && LLAMA_GIT"
+   # ============================================================================
+   #- name:  "Configuration de la build"
+   #  shell: "bash"
+   #  run:   |
+   #   source ./scripts/lib/functions.sh
+   #   cd "./llama.cpp"
+   #   LLAMA_BUILD_CONFIG
    # ============================================================================
 
 
