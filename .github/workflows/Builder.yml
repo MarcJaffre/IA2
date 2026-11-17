@@ -46,6 +46,6 @@ jobs:
      shell: "bash"
      run: "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
    # ===================================================================
-   #- name:  "Installation des paquets de Nvidia"
-   #  shell: "bash"
-   #  run: "source ./scripts/lib/functions.sh && NVIDIA_INSTALL"
+   - name:  "Installation des paquets de Nvidia"
+     shell: "bash"
+     run: "source ./scripts/lib/functions.sh && NVIDIA_INSTALL"
