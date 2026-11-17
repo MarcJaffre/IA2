@@ -26,25 +26,18 @@ jobs:
   container: debian:bookworm
   name:  "Étape 1 : Préparation de l'environnement Debian"
   # ====================================================================
-
-  # ====================================================================
   steps:
    # ===================================================================
    - name: Récupérer le code du dépôt
      uses: actions/checkout@v4
    # ===================================================================
-   - name: Lister le contenu
-     run: find ./scripts
+   #- name: Lister le contenu
+   #  run: find ./scripts
    # ===================================================================
-   - name: Charger les fichiers 
-     shell: bash
-     run: |
-      source ./scripts/lib/functions.sh
-      DEBIAN_APT_BASE
+   #- name: Charger les fichiers 
+   #  shell: bash
+   #  run: |
+   #   source ./scripts/lib/functions.sh
+   #   DEBIAN_APT_BASE
    # ===================================================================
-
- #######################################################################
- Etape_2:
-  # ====================================================================
-  needs: Etape_1
  
