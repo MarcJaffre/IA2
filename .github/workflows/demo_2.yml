@@ -9,3 +9,11 @@ name: Demo_2
 on:
  workflow_dispatch:
 
+########################################################################
+# Tâche de travaille #
+######################
+jobs:
+ Etape_1:
+  runs-on: ubuntu-22.04
+  container:
+   image: debian:bookworm-slim
