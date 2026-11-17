@@ -1,19 +1,24 @@
+# =========================================================================
 # Nom du job
 name: Découverte GitHub Actions
 
+# =========================================================================
 # Declenchement a la demande
 on:
   workflow_dispatch:
 
-# Liste des jovs
+# =========================================================================
+# Liste des jobs
 jobs:
+  # =======================================================================
+  # Premier job dans la liste 
   premier-job:
+    # Selection du système qui lance les tâches
     runs-on: ubuntu-latest
-
+    # Etape du job
     steps:
       - name: Dire bonjour
         run: echo "Bonjour, mon premier workflow fonctionne"
-
       - name: Voir la machine
         run: |
           uname -a
