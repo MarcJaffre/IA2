@@ -119,12 +119,12 @@ if [ ! -f /usr/bin/pip3                      ]; then apt install -y python3-pip 
 #fi
 # ==============================================================================================================================
 # Github
-#if [ "$VERSION_ID" = "22.04" ]; then
-#echo "Installation de PYTHON3-13-ENV";
-#  if [ ! -d /usr/share/doc/python3.13          ]; then apt install -y python3.13                   1>/dev/null; fi
-#echo "Installation de PYTHON3-13-ENV";
-#  if [ ! -d /usr/share/doc/python3.13-venv     ]; then apt install -y python3.13-venv              1>/dev/null; fi
-#fi
+if [ "$VERSION_ID" = "22.04" ]; then
+echo "Installation de PYTHON3-13-ENV";
+  if [ ! -d /usr/share/doc/python3.13          ]; then apt install -y python3.13                   1>/dev/null; fi
+echo "Installation de PYTHON3-13-ENV";
+  if [ ! -d /usr/share/doc/python3.13-venv     ]; then apt install -y python3.13-venv              1>/dev/null; fi
+fi
 
 # ==============================================================================================================================
 # Bypass Erreur
