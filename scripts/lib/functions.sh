@@ -91,10 +91,10 @@ if [ ! -d  /usr/share/doc/pkg-config         ]; then apt install -y pkg-config  
 # ==============================================================================================================================
 #echo "Installation de LINUX-HEADERS";
 #if [ ! -d /usr/src/linux-headers-$(uname -r) ]; then apt install -y linux-headers-$(uname -r)    1>/dev/null; fi
-#echo "Installation de PYTHON3-FULL";
-#if [ ! -f /usr/bin/pip3                      ]; then apt install -y python3-pip;      fi
-#if [ ! -d /usr/share/doc/python3-full        ]; then apt install -y python3-full;     fi
-#echo "Installation de PYTHON3-PIP";
+echo "Installation de PYTHON3-PIP";
+if [ ! -f /usr/bin/pip3                      ]; then apt install -y python3-pip;      fi
+echo "Installation de PYTHON3-FULL";
+if [ ! -d /usr/share/doc/python3-full        ]; then apt install -y python3-full;     fi
 # ==============================================================================================================================
 # Github
 #if [ "$VERSION_ID" = "22.04" ]; then
