@@ -22,12 +22,10 @@ jobs:
   # ====================================================================
   steps:
    # ===================================================================
-   - name: Mise à jour du système
-     run: apt update
+   - name: Chargement des sources
+     run: |
+      source ./scripts/lib/functions.sh
    # ===================================================================
-   - name: Mise à niveau du système
-     run: apt upgrade
+
    # ===================================================================
-   - name: Installation de paquet
-     run : |
-      aapt install -y build-essential
+   
