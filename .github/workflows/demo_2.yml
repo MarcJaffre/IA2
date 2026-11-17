@@ -31,7 +31,7 @@ jobs:
    - name: Charger les fichiers 
      shell: bash
      run: |
-     source ./scripts/lib/functions.sh
-     DEBIAN_APT_BASE
-     
-   
+      source ./scripts/lib/functions.sh
+      DEBIAN_APT_BASE
+
+   # ===================================================================
