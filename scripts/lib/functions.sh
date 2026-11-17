@@ -11,6 +11,21 @@ LLAMA_GIT(){
  git clone --quiet "https://github.com/ggerganov/llama.cpp.git" "llama.cpp";
 }
 
+LLAMA_BUILD(){
+cd ./llama.cpp/src
+
+PARM_02='-DCMAKE_BUILD_TYPE=Release'
+PARM_03='-DGGML_CUDA=ON'
+PARM_04='-DCMAKE_CUDA_ARCHITECTURES=86'
+PARM_05='-DGGML_CUDA_FA_ALL_QUANTS=ON'
+PARM_06='-DLLAMA_OPENSSL=ON'
+PARM_07='-DLLAMA_BUILD_TESTS=OFF'
+PARM_08='-DBUILD_SHARED_LIBS=OFF'
+PARM_09='-DGGML_CCACHE=OFF'
+CMAKE_ARGS="$PARM_02 $PARM_03 $PARM_04 $PARM_05 $PARM_06 $PARM_07 $PARM_08 $PARM_09"
+cmake -B build $CMAKE_ARGS --log-level=ERROR > /dev/null;
+#cmake --build build --config Release -j $(nproc)
+}
 
 
 
