@@ -22,4 +22,4 @@ jobs:
   # ------------------------------------------------------------------
   steps: |
    - name: Mise à jour du système
-     run: apt update;
+     run: apt update
