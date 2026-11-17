@@ -10,7 +10,6 @@
 LLAMA_GIT(){
  git clone --quiet "https://github.com/ggerganov/llama.cpp.git" "llama.cpp";
  cd "./llama.cpp/src"
- ls
 }
 
 LLAMA_BUILD_CONFIG(){
