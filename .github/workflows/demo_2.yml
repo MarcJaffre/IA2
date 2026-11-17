@@ -32,7 +32,7 @@ jobs:
      uses: actions/checkout@v4
    # ===================================================================
    - name: Lister le contenu
-      run: find ./scripts
+     run:  find ./scripts
    # ===================================================================
    #- name: Charger les fichiers 
    # shell: bash
