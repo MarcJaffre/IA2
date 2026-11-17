@@ -34,8 +34,8 @@ jobs:
    - name: Vérifier binaire
      run: whereis source
    # ===================================================================
-   - name: Charger les fichiers 
-     shell: bash
-     run: source ./scripts/lib/functions.sh
+   #- name: Charger les fichiers 
+   #  shell: bash
+   #  run: source ./scripts/lib/functions.sh
      
    
