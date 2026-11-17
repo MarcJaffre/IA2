@@ -4,8 +4,8 @@
 name: "Building Projet IA"
 
 #################################################################################
-# Déclencher #
-##############
+# Mode de déclenchement #
+#########################
 on:
  workflow_dispatch:
 
