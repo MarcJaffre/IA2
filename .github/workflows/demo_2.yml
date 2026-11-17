@@ -28,8 +28,10 @@ jobs:
    - name: Lister le contenu
      run: find ./scripts
    # ===================================================================
-   #- name: Charger les fichiers 
-   #  shell: bash
-   #  run: source ./scripts/lib/functions.sh
+   - name: Charger les fichiers 
+     shell: bash
+     run: |
+     source ./scripts/lib/functions.sh
+     DEBIAN_APT_BASE
      
    
