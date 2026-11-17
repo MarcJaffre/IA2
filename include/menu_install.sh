@@ -8,10 +8,10 @@ set -e
 ############################################################################################################
 #                                 CHARGEMENT DES FICHIERS                                                  #
 ############################################################################################################
-source /etc/os-release;
-source ./config/settings.env;
-source ./shell/demo.sh;
-source ./shell/functions.sh;
+source  /etc/os-release;
+source ./include/settings.env;
+source ./include/functions.sh;
+source ./include/dev/demo.sh;
 
 ############################################################################################################
 #                                 LANCEMENT DU MENU DE SELECTION                                           #
