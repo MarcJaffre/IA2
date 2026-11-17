@@ -46,9 +46,11 @@ jobs:
      shell: "bash"
      run:   "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
    # ===================================================================
+   # Compilation automatique de llama.cpp pour Debian Bookworm.
    - name:  "Build Release"
      uses:  "softprops/action-gh-release@v2"
      with:
-       tag_name: v${{ github.run_number }}
-       name: Release v${{ github.run_number }}
+       tag_name: "v${{ github.run_number }}"
+       name: "Release v${{ github.run_number }}"
+       body: "Generation d'une build de developpement, ne pas utiliser !"
        generate_release_notes: true
