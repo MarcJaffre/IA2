@@ -23,7 +23,7 @@ jobs:
   steps:
    # ===================================================================
    - name: Récupérer le code du dépôt
-     run: actions/checkout@v4
+     uses: actions/checkout@v4
    # ===================================================================
    # source ./scripts/lib/functions.sh
    - name: Lister le contenu
