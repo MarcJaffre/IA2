@@ -36,9 +36,16 @@ jobs:
    # ===================================================================
    - name:  "Mise à jour"
      shell: "bash"
-     run: |
-      source ./scripts/lib/functions.sh 
-      DEBIAN_APT_BASE
-      DEBIAN_APT_TOOL
-      DEBIAN_APT_BUILDER
-      NVIDIA_INSTALL
+     run: "source ./scripts/lib/functions.sh && DEBIAN_APT_BASE"
+   # ===================================================================
+   - name:  "Installation des paquets de base"
+     shell: "bash"
+     run: "source ./scripts/lib/functions.sh && DEBIAN_APT_TOOL"
+   # ===================================================================
+   - name:  "Installation des paquets de construction"
+     shell: "bash"
+     run: "source ./scripts/lib/functions.sh && DEBIAN_APT_BUILDER"
+   # ===================================================================
+   - name:  "Installation des paquets de Nvidia"
+     shell: "bash"
+     run: "source ./scripts/lib/functions.sh && NVIDIA_INSTALL"
