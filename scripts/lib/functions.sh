@@ -4,41 +4,6 @@
 # Le script lanceur charge tous les fichiers.
 
 
-################################################################################################################################################
-#                                 TOUT CE QUI CONCERNE L'APPLICATION LLAMA.CPP                                                                 #
-################################################################################################################################################
-LLAMA_GIT(){
- git clone --quiet "https://github.com/ggerganov/llama.cpp.git" "llama.cpp";
- cd "./llama.cpp/src"
-}
-
-LLAMA_BUILD_CONFIG(){
-PARM_02='-DCMAKE_BUILD_TYPE=Release'
-PARM_03='-DGGML_CUDA=ON'
-PARM_04='-DCMAKE_CUDA_ARCHITECTURES=86'
-PARM_05='-DGGML_CUDA_FA_ALL_QUANTS=ON'
-PARM_06='-DLLAMA_OPENSSL=ON'
-PARM_07='-DLLAMA_BUILD_TESTS=OFF'
-PARM_08='-DBUILD_SHARED_LIBS=OFF'
-PARM_09='-DGGML_CCACHE=OFF'
-
-CMAKE_ARGS="$PARM_02 $PARM_03 $PARM_04 $PARM_05 $PARM_06 $PARM_07 $PARM_08 $PARM_09"
-
-cmake -B build $CMAKE_ARGS
-
-#--log-level=ERROR > /dev/null;
-}
-
-
-
-
-
-
-
-
-################################################################################################################################################
-#                                 TOUT CE QUI CONCERNE L'APPLICATION OPENWEBUI                                                                 #
-################################################################################################################################################
 
 ################################################################################################################################################
 #                                 TOUT CE QUI CONCERNE L'INSTALLATION DES DEPENDANCES                                                          #
@@ -123,48 +88,51 @@ if [ ! -d /usr/share/doc/openssl             ]; then apt install -y openssl     
 # ==============================================================================================================================
 echo "Installation de BUILD-ESSENTIAL";
 if [ ! -d /usr/share/build-essential         ]; then apt install -y build-essential              1>/dev/null; fi
-
-
+# ==============================================================================================================================
 
 # -------- GITHUB WORKFLOW
-if [ ! -d  /usr/share/doc/pkg-config         ]; then apt install -y pkg-config                   1>/dev/null; fi
+#if [ ! -d  /usr/share/doc/pkg-config         ]; then apt install -y pkg-config                   1>/dev/null; fi
 # -------- GITHUB WORKFLOW
 
-
-
+# ==============================================================================================================================
 #echo "Installation de LINUX-HEADERS";
 #if [ ! -d /usr/src/linux-headers-$(uname -r) ]; then apt install -y linux-headers-$(uname -r)    1>/dev/null; fi
+#echo "Installation de PYTHON3-FULL";
+#if [ ! -d /usr/share/doc/python3-full        ]; then apt install -y python3-full                 1>/dev/null; fi
+#echo "Installation de PYTHON3-PIP";
+#if [ ! -f /usr/bin/pip3                      ]; then apt install -y python3-pip                  1>/dev/null; fi
 
-echo "Installation de PYTHON3-FULL";
-if [ ! -d /usr/share/doc/python3-full        ]; then apt install -y python3-full                 1>/dev/null; fi
-echo "Installation de PYTHON3-PIP";
-if [ ! -f /usr/bin/pip3                      ]; then apt install -y python3-pip                  1>/dev/null; fi
+
 # ==============================================================================================================================
 # Bookworm
-if [ "$VERSION_ID" = "12" ]; then
-echo "Installation de PYTHON3-11";
-  if [ ! -d /usr/share/doc/python3.11          ]; then apt install -y python3.11                   1>/dev/null; fi
-echo "Installation de PYTHON3-11-ENV";
-  if [ ! -d /usr/share/doc/python3.11-venv     ]; then apt install -y python3.11-venv              1>/dev/null; fi
-fi
+#if [ "$VERSION_ID" = "12" ]; then
+#echo "Installation de PYTHON3-11";
+#  if [ ! -d /usr/share/doc/python3.11          ]; then apt install -y python3.11                   1>/dev/null; fi
+#echo "Installation de PYTHON3-11-ENV";
+#  if [ ! -d /usr/share/doc/python3.11-venv     ]; then apt install -y python3.11-venv              1>/dev/null; fi
+#fi
 # ==============================================================================================================================
 # Trixie
-if [ "$VERSION_ID" = "13" ]; then
-echo "Installation de PYTHON3-13-ENV";
-  if [ ! -d /usr/share/doc/python3.13          ]; then apt install -y python3.13                   1>/dev/null; fi
-echo "Installation de PYTHON3-13-ENV";
-  if [ ! -d /usr/share/doc/python3.13-venv     ]; then apt install -y python3.13-venv              1>/dev/null; fi
-fi
+#if [ "$VERSION_ID" = "13" ]; then
+#echo "Installation de PYTHON3-13-ENV";
+#  if [ ! -d /usr/share/doc/python3.13          ]; then apt install -y python3.13                   1>/dev/null; fi
+#echo "Installation de PYTHON3-13-ENV";
+#  if [ ! -d /usr/share/doc/python3.13-venv     ]; then apt install -y python3.13-venv              1>/dev/null; fi
+#fi
+# ==============================================================================================================================
+# Github
+#if [ "$VERSION_ID" = "22.04" ]; then
+#echo "Installation de PYTHON3-13-ENV";
+#  if [ ! -d /usr/share/doc/python3.13          ]; then apt install -y python3.13                   1>/dev/null; fi
+#echo "Installation de PYTHON3-13-ENV";
+#  if [ ! -d /usr/share/doc/python3.13-venv     ]; then apt install -y python3.13-venv              1>/dev/null; fi
+#fi
+
 # ==============================================================================================================================
 # Bypass Erreur
 echo "" > /tmp/Test;
 # ==============================================================================================================================
 }
-
-
-
-
-
 
 ################################################################################################################################################
 #                                 TOUT CE QUI CONCERNE L'INSTALLATION DE NVIDIA                                                                #
@@ -196,6 +164,37 @@ grep GRUB_CMDLINE_LINUX_DEFAULT /etc/default/grub;
 
 
 
+
+
+
+################################################################################################################################################
+#                                 TOUT CE QUI CONCERNE L'APPLICATION LLAMA.CPP                                                                 #
+################################################################################################################################################
+LLAMA_GIT(){
+ git clone --quiet "https://github.com/ggerganov/llama.cpp.git" "llama.cpp";
+ cd "./llama.cpp/src"
+}
+
+LLAMA_BUILD_CONFIG(){
+PARM_02='-DCMAKE_BUILD_TYPE=Release'
+PARM_03='-DGGML_CUDA=ON'
+PARM_04='-DCMAKE_CUDA_ARCHITECTURES=86'
+PARM_05='-DGGML_CUDA_FA_ALL_QUANTS=ON'
+PARM_06='-DLLAMA_OPENSSL=ON'
+PARM_07='-DLLAMA_BUILD_TESTS=OFF'
+PARM_08='-DBUILD_SHARED_LIBS=OFF'
+PARM_09='-DGGML_CCACHE=OFF'
+
+CMAKE_ARGS="$PARM_02 $PARM_03 $PARM_04 $PARM_05 $PARM_06 $PARM_07 $PARM_08 $PARM_09"
+
+cmake -B build $CMAKE_ARGS
+
+#--log-level=ERROR > /dev/null;
+}
+
+################################################################################################################################################
+#                                 TOUT CE QUI CONCERNE L'APPLICATION OPENWEBUI                                                                 #
+################################################################################################################################################
 
 
 ################################################################################################################################################
